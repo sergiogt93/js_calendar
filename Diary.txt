@@ -1,0 +1,10 @@
+DIARY CALENDAR
+
+Firstly, the first two days, we created the static calendar in HTML and after we created dynamic calendar with JS. At the same time we created in the HTML file the main modal to create events.
+
+Secondly, the next day, we created the days of the month and after we introduced previous days and next days. We also showed the differents events lists and it is shown dynamically.
+The different lists are the types of the events, all events list and all passed events list. Also, you can choose the type of events you want to see.
+
+Thirdly, during the weekend, we improve the desing with CSS, as example, we marked the current day, then the passed days and the following days.
+
+Finally, we put the transition of the calendar as Google has.

@@ -1,0 +1,559 @@
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.modal_crear {
+    border: 1px solid black;
+    display: flex;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main_modal {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.head_modal {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: grey;
+    padding: 3px 10px;
+}
+
+.nav_modal {
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+    color: rgb(0, 0, 0);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav_modal:hover,
+.nav_modal:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.input_modal {
+    margin: 30px 15px 15px 15px;
+    padding-top: 20px;
+}
+
+.title-modal-input {
+    padding: 5px;
+    border: 0;
+    width: 60%;
+    border-bottom: 1px solid black;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.title-modal-input:focus {
+    outline: none;
+}
+
+.date_modal {
+    padding: 5px;
+    border: 0;
+    width: 70%;
+    border-bottom: 1px solid black;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.date_modal:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.linianobonito {
+    margin: auto;
+    width: 60%;
+    height: 2px;
+    background-color: rgba(192, 192, 192, 0);
+    transition: 2s;
+}
+
+.liniabonito {
+    transform-origin: 96px center;
+    margin: auto;
+    width: 60%;
+    height: 2px;
+    background-color: var(--azul);
+}
+
+.fecha_modal {
+    display: flex;
+    justify-content: center;
+}
+
+.fecha_modal>div {
+    margin: 10px;
+    width: 100%;
+}
+
+.date-picker {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.opciones_modal {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+/* checkbox start */
+input[type="checkbox"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(29, 120, 238);
+}
+
+.checkbox-modal {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+    max-height: 30px;
+}
+
+.checkbox-modal>div {
+    display: flex;
+}
+
+.checkbox-modal>div>p {
+    position: relative;
+    bottom: 10px;
+}
+
+/* The container */
+.checkbox-modal-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-modal-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-modal-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-modal-container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-modal-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-modal-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* checkbox finish */
+
+/* selecionar cada cuanto */
+.repit_modal {
+    border: none;
+    height: 30px;
+    text-align: center;
+    margin: 2% 0%;
+    cursor: pointer;
+    width: 100%;
+}
+
+.repit_modal:hover {
+    box-shadow: 1px 1px 5px;
+}
+
+.repit_modal:focus {
+    outline: none;
+}
+
+/* descripcion */
+#descripcion_modal>input {
+    width: 70%;
+    border: none;
+    text-align: center;
+    box-shadow: 1px 1px 2px;
+    height: 3em;
+    margin: 10px 3%;
+}
+
+#descripcion_modal>input:hover {
+    outline: none;
+    box-shadow: 1px 1px 5px;
+}
+
+#descripcion_modal>input:focus {
+    outline: none;
+    box-shadow: 1px 1px 5px var(--azul);
+}
+
+.footer_modal {
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+.footer_modal>div>select {
+    display: flex;
+    outline: none;
+    border: none;
+    width: 30%;
+    margin: 0px 10px;
+}
+
+.footer_modal>div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 60%;
+    height: 20px;
+}
+
+
+.footer_modal>div>select:hover {
+    box-shadow: 1px 1px 5px;
+}
+
+.footer_modal>button {
+    background-color: var(--azul);
+    color: white;
+    font-size: 1.2em;
+    padding: 15px;
+    border: solid 2px var(--azulclaro);
+    border-radius: 7px;
+}
+
+/* Tag */
+
+.btnmodalinfo {
+    width: 200px;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: blue;
+    position: relative;
+}
+
+.miniEvents {
+    position: relative;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-height: 20px;
+    cursor: pointer;
+}
+
+.miniEvents>div {
+    height: 12px;
+    width: 12px;
+    border-radius: 20px;
+}
+
+.meeting {
+    background-color: rgb(59, 59, 255);
+    color: white;
+}
+
+.personal {
+    background-color: rgb(255, 39, 39);
+    color: white;
+}
+
+.study {
+    background-color: green;
+    color: white;
+}
+
+
+.meeting:hover {
+    background-color: var(--azul);
+}
+
+.personal:hover {
+    background-color: rgb(252, 111, 111);
+}
+
+.study:hover {
+    background-color: rgb(53, 179, 53);
+}
+
+.meeting:active,
+.personal:active,
+.study:active,
+.inday:active {
+    box-shadow: 2px 2px 10px rgb(63, 63, 63);
+}
+
+#0 {
+    background-color: rgb(248, 76, 76)
+}
+
+.inday:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+/* final tag */
+
+/* modal info */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Black w/ opacity */
+}
+.modal1 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* The Close Button */
+.close,
+.edit,
+.delete {
+    color: #aaaaaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.edit:hover,
+.edit:focus,
+.delete:hover,
+.delete:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* edit button */
+
+/* delete button */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.modal-content>div {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal-content>div>i {
+    margin: 10px;
+}
+
+.modal-content>section {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.modal-content>section>div>h2 {
+    margin: 5px !important;
+}
+
+.modal-content>section>div {
+    width: 70%;
+}
+
+.typeeventmodal {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 30% !important;
+}
+
+.typeeventmodal>i {
+    margin: 15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+}
+
+#contmodalinfo>p {
+    margin: 3px !important;
+}
+
+#contmodalinfo>span {
+    visibility: hidden;
+}
+
+.bigModalId {
+    visibility: hidden;
+}

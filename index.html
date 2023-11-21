@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/media.css">
+    <link rel="stylesheet" href="./assets/css/modal.css" />
+    <script src="./assets/js/dom.js" defer></script>
+    <script src="./assets/js/data.js" defer></script>
+    <script src="./assets/js/events.js" defer></script>
+    <script src="./assets/js/createElements.js" defer></script>
+    <script src="./assets/js/functions.js" defer></script>
+    <script src="./assets/js/modal.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <title>Calendar</title>
+</head>
+
+<body>
+    <div class="container">
+        <section id="barrnav"></section>
+        <section id="calendars">
+            <section id="minicalendar">
+                <div>
+                    <button id="crear_minicalendar">
+                        <img src="/assets/img/mas.png" alt="create new event" />
+                        <span>Create</span>
+                    </button>
+                </div>
+                <div class="header-calendar">
+                    <button class="btn-prev-month">
+                        <img src="/assets/img/left-arrow.png" alt="previous month" />
+                    </button>
+                    <span class="date-calendar"></span>
+                    <button class="btn-next-month">
+                        <img src="/assets/img/right-arrow.png" alt="next month" />
+                    </button>
+                </div>
+                <div id="small_calendar"></div>
+                <div id="lista_minicalendar">
+                    <details id="micalendar_minicalendar"></details>
+                    <details id="mievents_minicalendar">
+                        <summary>Type Events List</summary>
+                        <label class="checkbox-modal-container">
+                            Meeting
+                            <input type="checkbox" value="Meeting" />
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-modal-container">
+                            Personal
+                            <input type="checkbox" value="Personal" />
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-modal-container">
+                            Study
+                            <input type="checkbox" value="Study" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </details>
+                    <details id="expiredEve_minicalendar"></details>
+                </div>
+            </section>
+            <section id="calendar">
+                <div class="header-calendar">
+                    <button class="btn-prev-month">
+                        <img src="/assets/img/left-arrow.png" alt="previous month" />
+                    </button>
+                    <span class="date-calendar"></span>
+                    <button class="btn-next-month">
+                        <img src="/assets/img/right-arrow.png" alt="next month" />
+                    </button>
+                </div>
+                <div id="big_calendar"></div>
+            </section>
+        </section>
+
+        <div id="modal_crear" class="modal_crear">
+            <div id="main_modal" class="main_modal">
+                <div class="head_modal">
+                    <div class="head_modal">
+                        <span id="nav_modal" class="nav_modal">&times;</span>
+                    </div>
+                </div>
+                <div id="input_modal" class="input_modal">
+                    <input type="Text" placeholder="Añade un titulo"
+                        class="title-modal-input modal-need eventComonClass" />
+                    <div id="liniabonito" class="linianobonito"></div>
+                </div>
+                <div id="fecha_modal" class="fecha_modal">
+                    <div id="fechadia_modal">
+                        <span class="date-picker">
+                            <i class="far fa-clock clocki"></i>
+                            <input id="date-pickerInput" type="datetime-local"
+                                class="date_modal modal-need eventComonClass neededDate" />
+                        </span>
+                        <div id="liniabonito" class="linianobonito"></div>
+                    </div>
+                </div>
+                <div class="Modal_Id">
+                    <span id="bigModalId" class="bigModalId"></span>
+                </div>
+                <div id="opciones_modal" class="opciones_modal">
+                    <div id="checkbox-modal" class="checkbox-modal">
+                        <label class="checkbox-modal-container">
+                            Todo el día
+                            <input id="checkbox_tododia" type="checkbox" />
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-modal-container">Recordatorio
+                            <input type="checkbox" id="recordatorio_modal" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div id="selctdiv_modal">
+                        <select size="1" name="usgsfeed" class="repit_modal eventComonClass" id="usgsfeed">
+                            <option value="No se repite" selected>No se repite</option>
+                            <option value="Cada dia">Cada dia</option>
+                            <option value="Cada semana">Cada semana</option>
+                            <option value="Cada mes">Cada mes</option>
+                            <option value="Laborables">Laborables</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="descripcion_modal">
+                    <i class="fas fa-align-left"></i>
+                    <input type="text" maxlength="500" placeholder="descripcion" class="eventComonClass" />
+                </div>
+                <div id="footer_modal" class="footer_modal">
+                    <div>
+                        <i class="fas fa-boxes"></i>
+                        <select size="1" name="usgsfeed" id="usgsfeed" class="eventComonClass">
+                            <option value="Meeting" selected>Meeting</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Study">Study</option>
+                        </select>
+                    </div>
+                    <button id="save-modal">Guardar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div id="modal-content" class="modal-content">
+                <div>
+                    <i class="fas fa-pencil-alt edit"></i><i class="fas fa-trash-alt delete"></i><i
+                        class="fas fa-times-circle close"></i>
+                </div>
+                <section>
+                    <div class="typeeventmodal">
+                        <div></div>
+                        <i id="cicletype" class=""></i>
+                    </div>
+                    <div id="contmodalinfo">
+                        <h2></h2>
+                        <p></p>
+                        <div></div>
+                        <span></span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="rememberModal" class="modal1">
+        <div class="modal-content">
+            <i class="fas fa-times-circle close"></i>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

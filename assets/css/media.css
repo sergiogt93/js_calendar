@@ -1,0 +1,83 @@
+@media screen and (min-width: 500px) {
+    #crear_minicalendar {
+        width: 30%;
+        height: 50px;
+        margin: 10px 35%;
+    }
+
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+
+    #calendars {
+        flex-flow: column;
+        gap: 10px;
+    }
+
+    #crear_minicalendar {
+        width: 80%;
+        height: 50px;
+        margin: 10px 10%;
+    }
+
+    #minicalendar .header-calendar, #small_calendar, #micalendar_minicalendar   {
+        display: none;
+    }
+
+    #calendar {
+        display: block;
+        flex: 80%;
+    }
+
+    .date-calendar {
+        font-size: 0.3em;
+    }
+
+    #calendar .date-calendar {
+        font-size: 2em;
+    }
+
+    .boxEventsCal {
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+
+    #calendars {
+        flex-flow: row;
+        gap: 10px;
+    }
+
+    #minicalendar .header-calendar,  #micalendar_minicalendar   {
+        display:block;
+    }
+
+    #small_calendar{
+        display: grid;
+    }
+
+    .date-calendar {
+        font-size: 0.8em;
+    }
+
+    #minicalendar .btn-prev-month, #minicalendar .btn-next-month{
+        width: auto;
+        height: auto;
+    }
+
+    #minicalendar .btn-prev-month img, #minicalendar .btn-next-month img{
+        width: 20px;
+        height: 20px;
+    }
+
+    #calendar .date-calendar {
+        font-size: 2em;
+    }
+
+}

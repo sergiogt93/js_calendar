@@ -1,0 +1,152 @@
+:root {
+    --azul: #1a73e8;
+    --azulclaro: #d2e3fc;
+    --gris: #f1f3f4;
+    --grisOscuro: #f1f3f4;
+    --negro: #4e4643;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#crear_minicalendar {
+    width: 50%;
+    height: 50px;
+    line-height: 30px;
+    background-color: white;
+    border: 1px double var(--grisOscuro);
+    border-radius: 15px;
+    box-shadow: 2px 2px black;
+    margin: 10px;
+}
+
+#crear_minicalendar:hover {
+    background-color: #e4e2e2d0;
+}
+
+#crear_minicalendar img {
+    margin-right: 5px;
+}
+
+
+.number-days {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.number-days:hover {
+    opacity: 0.6;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: gold;
+}
+
+#crear_minicalendar:hover {
+    opacity: 0.6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header-calendar {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#calendars {
+    display: flex;
+    place-content: center;
+}
+
+#minicalendar {
+    flex: auto;
+}
+
+#small_calendar,
+#big_calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    transition: all 0.3s ease;
+    transform: translateX(0%);
+}
+
+#small_calendar div,
+.boxEventsCal {
+    place-self: center;
+    border: 5px;
+    border-color: darkgray;
+}
+
+.boxEventsCal {
+    height: 150px;
+    width: 100px;
+    border: 1px solid rgb(204, 201, 201);
+    overflow:auto;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+}
+
+
+
+#micalendar_minicalendar {
+    margin-top: 30px;
+}
+
+#mievents_minicalendar  {
+    margin-top: 30px;
+}
+
+#mievents_minicalendar label  {
+    margin-top: 10px;
+}
+
+#calendar {
+    display: none;
+}
+
+.date-calendar {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.previousMonthColor,
+.nextMonthColor {
+    border-radius: 5px;
+    color: rgb(209, 206, 206);
+}
+
+.actualDay {
+    /* font-size: 35px; */
+    background-color: #1a73e8;
+    border-radius: 20px;
+    color: white;
+}
+
+.btn-prev-month,
+.btn-next-month {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+#minicalendar .btn-prev-month, #minicalendar .btn-next-month{
+    width: 44px;
+    height: 44px;
+}
+
+#lista_minicalendar {
+    padding: 10px;
+}
+
+.nameWeekDays {
+    text-align: center;
+}
+
+/*.container{
+    background:linear-gradient(135deg, #236b9b, #41a735);
+} */
+
